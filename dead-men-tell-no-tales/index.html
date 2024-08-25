@@ -13,6 +13,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css"/>
+
+
 </head>
 <style>
 
@@ -77,10 +83,31 @@
   display: block;
   bottom: 20px;
 }
+span {
+	font-family: "Libre Caslon Text", serif;
+  font-style: normal;
+	font-size:18px;
+	text-transform: uppercase;
+	font-style: italic;
+	letter-spacing: -0.190em;
+	line-height: 0.4;
+}
+span.normal {
+	font-family: "Libre Caslon Text", serif;
+  font-style: normal;
+	font-size:18px;
+	text-transform: uppercase;
+	font-style: italic;
+	letter-spacing: -0.190em;
+	line-height: 0.4;
+  position:relative;		/*	Allow adjustment below:	*/
+  bottom: -10px;			/*	Move up from default	*/
+left: -87px;
+}
 </style>
 <body><header class="site-header" role="banner">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="">febri's blog</a><nav class="site-nav">
+  <div class="wrapper"><a class="site-title" rel="author" href=""><span>f<i class="fa-solid fa-not-equal"></i>briyanto</span><span class="normal">nugroho</span></a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger">
         <label for="nav-trigger">
         </label>
