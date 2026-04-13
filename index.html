@@ -1,147 +1,222 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Timeless Notes</title>
+  <meta charset="UTF-8">
+  <title>/</title>
   <style>
-    :root {
-      --bg: #f5f3ef;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #111827;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 32px 20px;
-    }
-
-    header {
-      max-width: 900px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: normal;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      color: var(--muted);
-      font-size: 1rem;
-      font-style: italic;
-    }
-
-    .blog-grid {
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
-
-    .post-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 22px 26px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .post-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.08);
-    }
-
-    .post-date {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .post-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .post-content {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: #374151;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 64px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.9rem;
-      }
-    }
+    body { background:black; color:#00ff9f; font-family:monospace; padding:20px; }
+    #terminal { white-space:pre-wrap; line-height:1.4; }
+    .input-line { display:flex; }
+    .prompt { margin-right:5px; }
+    input { background:black; border:none; color:#00ff9f; font-family:monospace; outline:none; width:100%; }
   </style>
 </head>
 <body>
+<div id="terminal"></div>
+<div class="input-line">
+  <span class="prompt" id="prompt">dad@system:~$</span>
+  <input id="cmd" autofocus />
+</div>
 
-  <header>
-    <h1>Timeless Notes</h1>
-    <p>Catatan singkat, pemikiran kecil, dan ide yang tak lekang oleh waktu</p>
-  </header>
+<script>
+const terminal = document.getElementById("terminal");
+const input = document.getElementById("cmd");
+const promptEl = document.getElementById("prompt");
 
-  <main class="blog-grid">
+// ===== FILESYSTEM =====
+const fs = {
+  "~": {
+    type: "dir",
+    children: {
+      "about.txt": { type: "file", content: "Ini arsip hidupmu. Dibuat oleh ayah." },
+      "message.txt": { type: "file", content: "Nak, jangan takut gagal." },
+      "memories": {
+        type: "dir",
+        children: {
+          "first_word.txt": { type: "file", content: "Kata pertamamu: Ayah" },
+          "first_step.txt": { type: "file", content: "Langkah pertamamu..." }
+        }
+      },
+      "secret": {
+        type: "dir",
+        locked: true,
+        password: "ayah",
+        children: {
+          "truth.txt": { type: "file", content: "Ayah bangga sama kamu." }
+        }
+      }
+    }
+  }
+};
 
-    <article class="post-card">
-      <div class="post-date">12 Januari 2026</div>
-      <div class="post-title">Tentang Waktu dan Kesabaran</div>
-      <div class="post-content">
-        Tidak semua hal perlu dikejar dengan tergesa-gesa. Beberapa hal hanya bisa dipahami
-        ketika kita cukup sabar untuk diam dan memperhatikan.
-      </div>
-    </article>
+let cwd = ["~"];
+let unlocked = {};
+let history = [];
+let historyIndex = -1;
 
-    <article class="post-card">
-      <div class="post-date">03 Januari 2026</div>
-      <div class="post-title">Menulis untuk Mengingat</div>
-      <div class="post-content">
-        Menulis bukan soal terlihat pintar. Ia adalah cara paling jujur untuk berdialog
-        dengan diri sendiri dan menyimpan jejak pikiran.
-      </div>
-    </article>
+let isRoot = false;
 
-    <article class="post-card">
-      <div class="post-date">21 Desember 2025</div>
-      <div class="post-title">Kesederhanaan yang Bertahan Lama</div>
-      <div class="post-content">
-        Hal-hal yang sederhana sering kali bertahan lebih lama. Tidak karena ia miskin bentuk,
-        tapi karena ia jujur pada fungsinya.
-      </div>
-    </article>
+// ===== COMMANDS =====
+const commands = ["help","ls","cd","cat","unlock","clear","pwd","whoami","sudo"];
 
-  </main>
+// ===== UTILS =====
+function getDir(path) {
+  let cur = fs;
+  for (let p of path) cur = cur[p].children;
+  return cur;
+}
 
-  <footer>
-    © 2026 — Timeless Notes
-  </footer>
+function print(text="") {
+  terminal.innerHTML += text + "\n";
+  window.scrollTo(0, document.body.scrollHeight);
+}
 
-</body>
+// 🔥 PROMPT MINIMAL
+function updatePrompt() {
+  promptEl.textContent = isRoot ? "#" : "$";
+}
+
+// ===== COMMANDS =====
+function ls() {
+  print(Object.keys(getDir(cwd)).join("  "));
+}
+
+function cd(target) {
+  if (!target) return;
+
+  if (target === "..") {
+    if (cwd.length > 1) cwd.pop();
+    return;
+  }
+
+  const dir = getDir(cwd);
+
+  if (!dir[target]) return print("No such directory");
+  if (dir[target].type !== "dir") return print("Not a directory");
+
+  if (dir[target].locked && !unlocked[target] && !isRoot) {
+    return print("Locked. unlock " + target);
+  }
+
+  cwd.push(target);
+}
+
+function cat(file) {
+  const dir = getDir(cwd);
+
+  if (!dir[file] || dir[file].type !== "file") {
+    return print("File not found");
+  }
+
+  print(dir[file].content);
+}
+
+function unlock(name) {
+  const dir = getDir(cwd);
+
+  if (!dir[name] || !dir[name].locked) {
+    return print("Nothing to unlock");
+  }
+
+  const pass = prompt("Password:");
+
+  if (pass === dir[name].password) {
+    unlocked[name] = true;
+    print("Access granted");
+  } else {
+    print("Wrong password");
+  }
+}
+
+function pwd() {
+  print(cwd.join("/"));
+}
+
+function whoami() {
+  print(isRoot ? "root" : "user");
+}
+
+function sudo(arg) {
+  if (arg === "reveal-truth") {
+    print("[ROOT ACCESS GRANTED]");
+    print("Ayah selalu ada buat kamu.");
+  } else {
+    print("sudo: command not allowed");
+  }
+}
+
+// 💀 BACKDOOR
+function backdoor() {
+  print("...bypassing auth");
+  print("...spawning root shell");
+
+  isRoot = true;
+  updatePrompt();
+
+  print("[+] root");
+}
+
+// ===== HANDLER =====
+function handleCommand(inputCmd) {
+  let [base, arg] = inputCmd.split(" ");
+
+  if (base === "backdoor") return backdoor();
+
+  if (!commands.includes(base)) {
+    return print("Command not found");
+  }
+
+  switch(base) {
+    case "help": print(commands.join(" ")); break;
+    case "ls": ls(); break;
+    case "cd": cd(arg); break;
+    case "cat": cat(arg); break;
+    case "unlock": unlock(arg); break;
+    case "clear": terminal.innerHTML=""; break;
+    case "pwd": pwd(); break;
+    case "whoami": whoami(); break;
+    case "sudo": sudo(arg); break;
+  }
+}
+
+// ===== INPUT =====
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const cmd = input.value.trim();
+    if (cmd === "") return;
+
+    print(promptEl.textContent + " " + cmd);
+
+    history.push(cmd);
+    historyIndex = history.length;
+
+    handleCommand(cmd);
+    input.value = "";
+  }
+
+  if (e.key === "ArrowUp") {
+    if (historyIndex > 0) historyIndex--;
+    input.value = history[historyIndex] || "";
+  }
+
+  if (e.key === "ArrowDown") {
+    if (historyIndex < history.length - 1) historyIndex++;
+    else return input.value = "";
+    input.value = history[historyIndex] || "";
+  }
+
+  if (e.key === "Tab") {
+    e.preventDefault();
+    const val = input.value;
+    const match = commands.find(c => c.startsWith(val));
+    if (match) input.value = match;
+  }
+});
+
+// ===== INIT =====
+print("Booting...");
+print("Welcome, thoriq.");
+print("Type 'help'");
+updatePrompt();
+</script></body>
 </html>
